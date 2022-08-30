@@ -1,0 +1,691 @@
+// Colors
+$purple: #7E3AF2
+$blue-dark: #111928
+$blue-light: #6B7280
+$blue-very-light: #E5E7EB
+$grey: #F9FAFB
+
+// Box-shadows
+$bs-purple: 4px 4px 4px #7e3af24c
+$bs-black: 4px 4px 4px #00000031
+
+// Transitions
+$tr-box-shadow: box-shadow 0.4s
+$tr-color: color 0.4s
+$tr-transform: transform 0.4s
+$tr-opacity: opacity 0.4s
+$tr-top: top 0.4s
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap')
+
+*
+    box-sizing: border-box
+
+html
+    font-family: "Inter", sans-serif
+    font-size: 14px
+    height: 100%
+    color: $blue-dark
+
+body
+    min-height: 100%
+    display: flex
+    flex-direction: column
+
+html, body
+    margin: 0
+
+.logo
+    width: 30px
+    height: 33px
+
+.content
+    padding-left: 80px
+    padding-right: 80px
+
+    &_padding-y
+
+        &_s
+            padding-top: 25px
+            padding-bottom: 25px
+
+        &_m
+            padding-top: 60px
+            padding-bottom: 60px
+
+.flex
+    display: flex
+
+    &_align
+
+        &_center
+            align-items: center
+
+    &_justify
+
+        &_between
+            justify-content: space-between
+
+    &_direction
+
+        &_column
+            flex-direction: column
+
+.nav
+    background: inherit
+
+    &__list
+        list-style: none
+        margin-top: 0
+        margin-bottom: 0
+        padding-left: 0
+
+    &__item
+        margin: 10px 5px 10px 5px
+
+    &__link
+        text-decoration: none
+        color: inherit
+        font-weight: inherit
+        transition: $tr-color
+
+        &:hover
+            color: $purple
+
+.button
+    border: none
+    background: none
+    font-family: inherit
+    font-weight: 500
+    border-radius: 10px
+    cursor: pointer
+
+    &_style
+
+        &_purple
+            background: $purple
+            color: white
+            transition: $tr-box-shadow
+            border: 2px solid $purple
+
+            &:hover
+                box-shadow: $bs-purple
+
+        &_white
+            background: white
+            color: $blue-dark
+            transition: $tr-box-shadow
+            border: 2px solid $blue-very-light
+
+            &:hover
+                box-shadow: $bs-black
+
+    &_size
+
+        &_s
+            padding: 7px 15px
+            font-size: 1.15rem
+
+        &_m
+            padding: 15px 25px
+            font-size: 1.25rem
+
+    &:active
+        position: relative
+        top: 5px
+        box-shadow: none
+
+.title
+    font-size: 2.5rem
+    line-height: 150%
+    margin-bottom: 0
+    margin-top: 0
+    font-weight: 800
+
+.text
+    color: $blue-light
+    font-size: 1.5rem
+    line-height: 150%
+    margin-bottom: 0
+
+.row
+    max-width: 768px
+    margin: 0 auto
+    text-align: center
+
+.separator
+    margin-top: 32px
+    margin-bottom: 32px
+
+.header
+    background: white
+    position: fixed
+    width: 100%
+    transition: $tr-box-shadow
+
+    &:hover
+        box-shadow: $bs-purple
+
+    &__title
+        margin-top: 0
+        margin-bottom: 0
+        font-size: 2rem
+        font-weight: 600
+        margin-left: 15px
+
+    &__nav
+        margin-left: 15px
+        color: $blue-dark
+        font-weight: 500
+        font-size: 1.25rem
+
+    &__column
+        margin-left: auto
+
+    &__menu-button
+        width: 40px
+        height: 30px
+        position: relative
+        margin-left: 15px
+        cursor: pointer
+        display: none
+
+        span
+            display: inline-block
+            width: 40px
+            height: 6px
+            border-radius: 3px
+            position: absolute
+            background: $blue-dark
+            opacity: 1
+            transition: $tr-opacity, $tr-top, $tr-transform
+
+            &:first-child
+                top: 0
+
+            &:nth-child(2)
+                top: 12px
+
+            &:last-child
+                top: 24px
+
+.main
+    flex: 1 1 auto
+
+.intro
+    background: white
+
+    &__row
+        margin-top: 60px
+
+    &__picture
+        float: right
+        width: 532px
+        height: 416px
+        margin-left: 40px
+
+    &__title
+        padding-top: 80px
+        margin-bottom: 0
+        font-size: 4rem
+        color: $blue-dark
+        font-weight: 900
+        margin-top: 0
+
+    &__text
+        margin-top: 24px
+
+    &__column
+        margin-top: 30px
+
+    &__button
+        margin-top: 10px
+
+.customers
+    background: white
+
+    &__logo
+        margin: 20px
+        flex: 1 1 auto
+
+.features
+    background: $grey
+
+    &__row
+        min-height: 435px
+        margin-top: 50px
+
+    &__picture
+        width: 598px
+        height: 435px
+
+        &_float
+
+            &_right
+                float: right
+                margin-left: 40px
+
+            &_left
+                float: left
+                margin-right: 40px
+
+    &__list
+        padding: 0
+        list-style: none
+        display: inline-block
+        margin: 0
+
+    &__item
+        margin: 16px 0
+        font-size: 1.1rem
+        font-weight: 600
+
+        &::before
+            content: url("../img/check-circle.svg")
+            vertical-align: middle
+            padding-right: 16px
+
+.social
+    background: white
+
+    &__tag
+        color: $purple
+        font-weight: 500
+        font-size: 1.25rem
+
+    &__info
+        margin-right: 60px
+
+    &__title
+        margin-top: 12px
+
+    &__text
+        margin-top: 16px
+
+    &__link
+        display: block
+        width: fit-content
+        margin-bottom: 16px
+        text-decoration: none
+        color: $purple
+        font-size: 1.1rem
+
+        &::after
+            content: url("../img/arrow-right.svg")
+            vertical-align: middle
+            padding-left: 16px
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+
+    &__item
+        padding: 10px
+
+        &-title
+            font-size: 1.25rem
+            font-weight: 800
+            margin-top: 16px
+            margin-bottom: 0
+
+        &-text
+            margin-top: 8px
+            font-size: 1.1rem
+
+.testimonials
+    background: $grey
+
+    &__quote
+        font-weight: 600
+        line-height: 150%
+        font-size: 1.25rem
+        margin-top: 24px
+        margin-bottom: 0
+
+    &__author
+        margin-top: 24px
+        margin-left: auto
+        margin-right: auto
+        width: fit-content
+        text-align: center
+
+        span
+            margin: 0 5px
+
+    &__text
+        font-weight: 600
+        font-size: 1.1rem
+
+    &__avatar
+        margin-right: 5px
+        width: 24px
+        height: 24px
+
+.price
+    background: white
+
+    &__text
+        margin-top: 16px
+
+    &__list
+        margin-top: 48px
+
+    &__item
+        flex: 1 1 30%
+        border-radius: 15px
+        border: 2px solid $blue-very-light
+        padding: 32px
+        text-align: center
+        margin: 15px
+
+        &-title
+            font-size: 2rem
+            margin-top: 0
+            margin-bottom: 0
+
+        &-text
+            font-size: 1.15rem
+            line-height: 150%
+            margin-top: 16px
+            color: $blue-light
+            margin-bottom: 0
+            flex: 1 1 auto
+
+        &-price
+            margin-top: 32px
+            font-size: 1.1rem
+            color: $blue-dark
+
+        &-num
+            font-size: 4rem
+            font-weight: 900
+
+        &-list
+            list-style: none
+            align-self: flex-start
+            text-align: left
+            margin-top: 26px
+            margin-bottom: 0
+            padding-left: 0
+
+        &-feature
+            margin: 10px 0
+            font-size: 1.1rem
+
+            span
+                font-weight: 600
+
+            &::before
+                content: url("../img/check.svg")
+                display: inline-block
+                vertical-align: middle
+                padding-right: 15px
+
+        &-button
+            margin-top: 32px
+
+.faq
+    background: white
+
+    &__list
+        list-style: none
+        color: $blue-light
+        margin-top: 32px
+        margin-bottom: 0
+        padding-left: 0
+
+    &__question
+        padding: 15px 0
+        cursor: pointer
+        font-size: 1.25rem
+        font-weight: 500
+        transition: $tr-color
+        border-bottom: 2px solid $blue-very-light
+
+    &__answer
+        font-size: 1.15rem
+        text-align: left
+        display: none
+        border-bottom: 2px solid $blue-very-light
+        margin: 0
+
+        &-paragraph
+            display: block
+            margin: 15px 0
+
+        &_highlight
+            color: $purple
+
+    &__chevron
+        transition: $tr-transform
+
+.promo
+    background: $grey
+
+    &__text
+        margin-top: 24px
+        margin-bottom: 24px
+
+.footer
+    background: white
+
+    &__title
+        color: $blue-dark
+        font-size: 1.5rem
+        text-transform: uppercase
+
+    &__column
+        margin: 0 auto
+        padding: 10px
+        flex: 1 1 auto
+        font-size: 1.25rem
+        color: $blue-light
+
+    &__logo
+        margin-top: 64px
+        margin-left: auto
+        margin-right: auto
+        width: fit-content
+
+    &__name
+        margin-left: 15px
+        font-weight: 600
+        margin-top: 0
+        margin-bottom: 0
+
+    &__copyright
+        font-size: 1.1rem
+        color: $blue-light
+        text-align: center
+        margin-top: 20px
+        margin-bottom: 0
+
+    &__nav
+        margin: 20px auto
+        width: fit-content
+
+#checkbox-menu
+    display: none
+
+@for $i from 1 through 4
+
+    #checkbox-faq-#{$i}
+        display: none
+
+        &:checked
+            
+            & ~ .faq__answer
+                display: block
+
+            & ~ .faq__question
+                color: $blue-dark
+                
+                .faq__chevron
+                    transform: rotate(180deg)
+
+@media screen and (max-width: 1024px)
+
+    .flex
+        flex-wrap: wrap
+
+    .nav
+
+        &__item
+            width: 100%
+            margin-left: 0
+            margin-right: 0
+
+    .separator
+        display: inline-block
+        width: 100%
+
+    .header
+
+        &__nav
+            order: 4
+            width: 100%
+            margin-left: 0
+            padding-top: 15px
+            display: none
+
+        &__menu-button
+            display: block
+
+    .intro
+
+        &__row
+            display: flex
+            flex-direction: column
+            align-items: center
+
+        &__title
+            padding-top: 0
+
+        &__picture
+            margin-left: 0
+
+    .customers
+
+        &__logo
+            flex: 1 1 25%
+
+    .features
+
+        &__row
+            margin-top: 0
+
+        &__picture
+
+            &_float
+
+                &_left
+                    margin-right: 0
+
+                &_right
+                    margin-left: 0
+
+        &__row
+            display: flex
+            flex-direction: column
+            align-items: center
+
+        &__list
+            align-self: flex-start
+
+    .price
+
+        &__item
+            flex: 0 1 45%
+
+    .footer
+
+        &__nav
+            
+            .nav__item
+                width: 15%
+                margin: 0 5px
+
+    #checkbox-menu
+
+        &:checked
+
+            & ~ .header__nav
+                display: block
+
+            & ~ .header__menu-button
+
+                span
+
+                    &:first-child
+                        transform: rotate(45deg)
+                        top: 12px
+
+                    &:nth-child(2)
+                        opacity: 0
+
+                    &:last-child
+                        transform: rotate(-45deg)
+                        top: 12px
+
+@media screen and (max-width: 768px)
+
+    .header
+
+        &__column
+            order: 5
+            display: none
+            margin-left: 0
+            margin-top: 10px
+
+        &__menu-button
+            margin-left: auto
+
+    .features
+
+        &__picture
+            width: calc(598px * 0.75)
+            height: calc(435px * 0.75)
+
+    .price
+
+        &__item
+            flex: 1 1 60%
+            margin-left: 0
+            margin-right: 0
+
+    #checkbox-menu
+
+        &:checked
+
+            & ~ .header__column
+                display: block
+
+@media screen and (max-width: 568px)
+
+    html
+        font-size: 12px
+
+    .content
+        padding-left: 20px
+        padding-right: 20px
+
+    .intro
+
+        &__picture
+            width: 100%
+            height: 100%
+
+        &__title
+            font-size: 3.5rem
+
+    .customers
+
+        &__logo
+            flex: 1 1 40%
+
+    .features
+
+        &__picture
+            width: 100%
+            height: 100%
